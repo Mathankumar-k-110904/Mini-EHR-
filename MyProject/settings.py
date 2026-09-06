@@ -26,9 +26,14 @@ SECRET_KEY = 'django-insecure-m*1**x3-5ioi%1djf=tihcegjrq5^kq*@!^92+y(yhh^v#*@v9
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "mini-ehr.onrender.com",
+    'mini-ehr.onrender.com',
+    'localhost',
+    '127.0.0.1',
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://mini-ehr.onrender.com',
+]
 
 # Application definition
 
