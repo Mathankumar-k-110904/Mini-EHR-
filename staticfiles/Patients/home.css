@@ -1,0 +1,253 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    background: #12355b;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-btn {
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    padding: 11px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.nav-btn:hover {
+    background: #1d4ed8;
+}
+
+
+/* =========================
+   LOGOUT BUTTON
+========================= */
+
+.logout-btn {
+    background: #dc2626;
+}
+
+.logout-btn:hover {
+    background: #b91c1c;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    width: 85%;
+    max-width: 1100px;
+    margin: 45px auto;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    background: white;
+    padding: 55px 40px;
+    text-align: center;
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.hero h1 {
+    color: #12355b;
+    font-size: 38px;
+    margin: 0 0 14px;
+}
+
+.hero p {
+    color: #64748b;
+    font-size: 16px;
+    margin: 0 0 28px;
+}
+
+.main-btn {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    padding: 13px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.main-btn:hover {
+    background: #1d4ed8;
+}
+
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.dashboard-card {
+    background: white;
+    padding: 24px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.dashboard-card:hover {
+    transform: translateY(-3px);
+    transition: 0.2s;
+}
+
+.card-icon {
+    font-size: 34px;
+    min-width: 35px;
+}
+
+.card-content h2 {
+    margin: 0 0 7px;
+    color: #12355b;
+    font-size: 23px;
+}
+
+.card-content p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+/* =========================
+   QUICK ACTIONS
+========================= */
+
+.quick-section {
+    background: white;
+    margin-top: 25px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.quick-section h2 {
+    margin: 0 0 20px;
+    color: #12355b;
+    font-size: 23px;
+}
+
+.quick-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.quick-btn {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    padding: 11px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.quick-btn:hover {
+    background: #1d4ed8;
+}
+
+.quick-btn.secondary {
+    background: #12355b;
+}
+
+.quick-btn.secondary:hover {
+    background: #0f2d4d;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        padding: 15px 5%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .nav-btn {
+        padding: 9px 14px;
+    }
+
+    .container {
+        width: 92%;
+        margin: 30px auto;
+    }
+
+    .hero {
+        padding: 40px 25px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .quick-buttons {
+        flex-direction: column;
+    }
+
+    .quick-btn {
+        text-align: center;
+    }
+}
