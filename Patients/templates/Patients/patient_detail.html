@@ -1,0 +1,109 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Details - Mini EHR</title>
+
+    <link rel="stylesheet"
+          href="{% static 'Patients/patient_detail.css' %}">
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <div class="logo">
+            🏥 Mini EHR
+        </div>
+
+        <div>
+            <a href="{% url 'home' %}" class="nav-btn">
+                Home
+            </a>
+
+            <a href="{% url 'add_patient' %}" class="nav-btn">
+                Add Patient
+            </a>
+
+            <a href="{% url 'patient_list' %}" class="nav-btn">
+                Patient Records
+            </a>
+        </div>
+
+    </div>
+
+
+    <div class="container">
+
+        <div class="patient-card">
+
+            <h1>Patient Details</h1>
+
+            <div class="detail-row">
+                <span>Name</span>
+                <strong>{{ patient.name }}</strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Age</span>
+                <strong>{{ patient.age }}</strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Gender</span>
+                <strong>{{ patient.gender }}</strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Phone</span>
+                <strong>{{ patient.phone }}</strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Email</span>
+                <strong>{{ patient.email }}</strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Address</span>
+                <strong>{{ patient.address }}</strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Blood Group</span>
+                <strong>{{ patient.blood_group }}</strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Allergies</span>
+                <strong>{{ patient.allergies }}</strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Medical History</span>
+                <strong>{{ patient.medical_history }}</strong>
+            </div>
+
+            <div class="detail-row">
+                <span>Medications</span>
+                <strong>{{ patient.medications }}</strong>
+            </div>
+
+            <a href="{% url 'edit_patient' patient.id %}" class="edit-btn">
+                ✏️ Edit Patient
+            </a>
+            <a href="{% url 'delete_patient' patient.id %}" class="delete-btn">
+                🗑️ Delete Patient
+            </a>
+
+            <a href="{% url 'patient_list' %}" class="back-btn">
+                ← Back to Patient Records
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

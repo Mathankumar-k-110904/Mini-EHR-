@@ -1,0 +1,149 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mini EHR</title>
+
+    <link rel="stylesheet" href="{% static 'Patients/home.css' %}">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <div class="navbar">
+
+        <div class="logo">
+            🏥 Mini EHR
+        </div>
+
+        <div class="nav-links">
+
+            <a href="{% url 'home' %}" class="nav-btn">
+                Home
+            </a>
+
+            <a href="{% url 'patient_list' %}" class="nav-btn">
+                Patient Records
+            </a>
+
+            <a href="{% url 'logout' %}" class="nav-btn logout-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- MAIN CONTAINER -->
+
+    <div class="container">
+
+        <!-- HERO SECTION -->
+
+        <div class="hero">
+
+            <h1>Electronic Health Record</h1>
+
+            <p>
+                Manage patient information and medical records
+                securely and efficiently.
+            </p>
+
+            <a href="{% url 'add_patient' %}" class="main-btn">
+                Register New Patient
+            </a>
+
+        </div>
+
+
+        <!-- DASHBOARD -->
+
+        <div class="dashboard">
+
+            <!-- TOTAL PATIENTS -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    👨‍⚕️
+                </div>
+
+                <div class="card-content">
+
+                    <h2>{{ total_patients }}</h2>
+
+                    <p>Total Patients</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- PATIENT RECORDS -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    📋
+                </div>
+
+                <div class="card-content">
+
+                    <h2>Patient Records</h2>
+
+                    <p>View registered patients</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- ADD PATIENT -->
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    ➕
+                </div>
+
+                <div class="card-content">
+
+                    <h2>Add Patient</h2>
+
+                    <p>Register a new patient</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUICK ACTIONS -->
+
+        <div class="quick-section">
+
+            <h2>Quick Actions</h2>
+
+            <div class="quick-buttons">
+
+                <a href="{% url 'add_patient' %}" class="quick-btn">
+                    ➕ Add New Patient
+                </a>
+
+                <a href="{% url 'patient_list' %}"
+                   class="quick-btn secondary">
+                    📋 View Patient Records
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Patient - Mini EHR</title>
+
+    <link rel="stylesheet"
+          href="{% static 'Patients/edit_patient.css' %}">
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <div class="logo">
+            🏥 Mini EHR
+        </div>
+
+        <div>
+            <a href="{% url 'home' %}" class="nav-btn">
+                Home
+            </a>
+
+            <a href="{% url 'add_patient' %}" class="nav-btn">
+                Add Patient
+            </a>
+
+            <a href="{% url 'patient_list' %}" class="nav-btn">
+                Patient Records
+            </a>
+        </div>
+
+    </div>
+
+
+    <div class="form-container">
+
+        <div class="form-card">
+
+            <h1>Edit Patient</h1>
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <div class="form-group">
+                    {{ form.name.label_tag }}
+                    {{ form.name }}
+                </div>
+
+                <div class="form-group">
+                    {{ form.age.label_tag }}
+                    {{ form.age }}
+                </div>
+
+                <div class="form-group">
+                    {{ form.gender.label_tag }}
+                    {{ form.gender }}
+                </div>
+
+                <div class="form-group">
+                    {{ form.phone.label_tag }}
+                    {{ form.phone }}
+                </div>
+
+                <div class="form-group">
+                    {{ form.email.label_tag }}
+                    {{ form.email }}
+                </div>
+
+                <div class="form-group">
+                    {{ form.address.label_tag }}
+                    {{ form.address }}
+                </div>
+
+                <div class="form-group">
+                    {{ form.blood_group.label_tag }}
+                    {{ form.blood_group }}
+                </div>
+
+                <div class="form-group">
+                    {{ form.allergies.label_tag }}
+                    {{ form.allergies }}
+                </div>
+
+                <div class="form-group">
+                    {{ form.medical_history.label_tag }}
+                    {{ form.medical_history }}
+                </div>
+
+                <div class="form-group">
+                    {{ form.medications.label_tag }}
+                    {{ form.medications }}
+                </div>
+
+                <button type="submit" class="save-btn">
+                    Save Changes
+                </button>
+
+            </form>
+
+            <a href="{% url 'patient_detail' patient.id %}" class="back-link">
+                ← Back to Patient Details
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+</html>

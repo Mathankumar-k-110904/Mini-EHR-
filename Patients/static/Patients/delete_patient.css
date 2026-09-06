@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    background: #12355b;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.nav-btn {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    padding: 11px 20px;
+    border-radius: 8px;
+    margin-left: 8px;
+    font-weight: bold;
+}
+
+.nav-btn:hover {
+    background: #1d4ed8;
+}
+
+/* =========================
+   DELETE CARD
+========================= */
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: 80px auto;
+}
+
+.delete-card {
+    background: white;
+    padding: 50px 40px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.warning-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.delete-card h1 {
+    color: #12355b;
+    margin-bottom: 15px;
+}
+
+.delete-card p {
+    color: #64748b;
+    font-size: 17px;
+}
+
+.patient-name {
+    margin: 25px 0;
+    padding: 15px;
+    background: #f1f5f9;
+    border-radius: 8px;
+    color: #12355b;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.warning-text {
+    color: #dc2626 !important;
+    font-size: 14px !important;
+}
+
+/* =========================
+   DELETE BUTTON
+========================= */
+
+.delete-btn {
+    width: 100%;
+    padding: 14px;
+    background: #dc2626;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.delete-btn:hover {
+    background: #b91c1c;
+}
+
+/* =========================
+   CANCEL BUTTON
+========================= */
+
+.cancel-btn {
+    display: block;
+    margin-top: 15px;
+    padding: 13px;
+    background: #64748b;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cancel-btn:hover {
+    background: #475569;
+}

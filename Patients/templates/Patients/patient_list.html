@@ -1,0 +1,171 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient List - Mini EHR</title>
+
+    <link rel="stylesheet"
+          href="{% static 'Patients/patient_list.css' %}">
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <div class="logo">
+            🏥 Mini EHR
+        </div>
+
+        <div>
+            <a href="{% url 'home' %}" class="nav-btn">
+                Home
+            </a>
+
+            <a href="{% url 'add_patient' %}" class="nav-btn">
+                Add Patient
+            </a>
+        </div>
+
+    </div>
+
+
+    <div class="container">
+
+        <div class="header">
+            <h1>Patient Records</h1>
+
+            <p>
+                View all registered patients
+            </p>
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+
+            <form method="GET">
+
+                <input
+                    type="text"
+                    name="search"
+                    placeholder="Search patient by name..."
+                    value="{{ search }}"
+                >
+
+                <button type="submit">
+                    🔍 Search
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- TABLE -->
+
+        <div class="table-card">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Gender</th>
+                        <th>Phone</th>
+                        <th>Blood Group</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    {% for patient in patients %}
+
+                    <tr>
+
+                        <td>{{ patient.name }}</td>
+
+                        <td>{{ patient.age }}</td>
+
+                        <td>{{ patient.gender }}</td>
+
+                        <td>{{ patient.phone }}</td>
+
+                        <td>{{ patient.blood_group }}</td>
+
+                        <td>
+                            <a href="{% url 'patient_detail' patient.id %}"
+                               class="view-btn">
+                                View
+                            </a>
+                        </td>
+
+                    </tr>
+
+                    {% empty %}
+
+                    <tr>
+                        <td colspan="6">
+                            No patients found.
+                        </td>
+                    </tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- PAGINATION -->
+
+        {% if page_obj.has_other_pages %}
+
+        <div class="pagination">
+
+            {% if page_obj.has_previous %}
+                <a href="?page={{ page_obj.previous_page_number }}{% if search %}&search={{ search }}{% endif %}">
+                    ← Previous
+                </a>
+            {% endif %}
+
+
+            {% for num in page_obj.paginator.page_range %}
+
+                {% if page_obj.number == num %}
+
+                    <span class="active">
+                        {{ num }}
+                    </span>
+
+                {% else %}
+
+                    <a href="?page={{ num }}{% if search %}&search={{ search }}{% endif %}">
+                        {{ num }}
+                    </a>
+
+                {% endif %}
+
+            {% endfor %}
+
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}{% if search %}&search={{ search }}{% endif %}">
+                    Next →
+                </a>
+            {% endif %}
+
+        </div>
+
+        {% endif %}
+
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Patient - Mini EHR</title>
+
+    <link rel="stylesheet"
+          href="{% static 'Patients/delete_patient.css' %}">
+</head>
+
+<body>
+
+    <div class="navbar">
+
+        <div class="logo">
+            🏥 Mini EHR
+        </div>
+
+        <div>
+            <a href="{% url 'home' %}" class="nav-btn">
+                Home
+            </a>
+
+            <a href="{% url 'patient_list' %}" class="nav-btn">
+                Patient Records
+            </a>
+        </div>
+
+    </div>
+
+
+    <div class="container">
+
+        <div class="delete-card">
+
+            <div class="warning-icon">
+                ⚠️
+            </div>
+
+            <h1>Delete Patient</h1>
+
+            <p>
+                Are you sure you want to delete this patient?
+            </p>
+
+            <div class="patient-name">
+                {{ patient.name }}
+            </div>
+
+            <p class="warning-text">
+                This action cannot be undone.
+            </p>
+
+            <form method="POST">
+
+                {% csrf_token %}
+
+                <button type="submit" class="delete-btn">
+                    🗑️ Yes, Delete Patient
+                </button>
+
+                <a href="{% url 'patient_detail' patient.id %}"
+                   class="cancel-btn">
+                    Cancel
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
